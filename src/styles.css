@@ -1,0 +1,166 @@
+/* Gentle Fitness Pack — shared print stylesheet.
+  Every generated page carries the cleared-reminder in the @page footer. */
+
+:root {
+  --ink: #2b2b2b;
+  --soft: #55606b;
+  --warm: #7a5c8f;
+  --warm-light: #f4eefa;
+  --green: #3f7d5a;
+  --green-light: #eef7f1;
+  --line: #b9c2cb;
+}
+
+* { box-sizing: border-box; }
+
+@page {
+  size: letter;
+  margin: 2cm 1.7cm 2.2cm 1.7cm;
+
+  @bottom-left {
+    content: "Education only — this is not exercise prescription.";
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 7.5pt;
+    color: #444;
+  }
+  @bottom-center {
+    content: "Go only if your doctor or physical therapist has cleared you to move — and stop if anything hurts.";
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 7.5pt;
+    color: #444;
+  }
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 7.5pt;
+    color: #444;
+  }
+}
+
+body {
+  font-family: "DejaVu Sans", sans-serif;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.page { page-break-after: always; }
+.page:last-child { page-break-after: auto; }
+
+h1 {
+  font-size: 20pt;
+  margin: 0 0 4pt 0;
+  line-height: 1.2;
+}
+h2 { font-size: 13pt; margin: 12pt 0 4pt 0; color: var(--warm); }
+h3 { font-size: 11pt; margin: 8pt 0 2pt 0; }
+
+.subtitle { color: var(--soft); font-size: 10pt; margin: 0 0 10pt 0; }
+.divider { border: none; border-top: 2px solid var(--warm); margin: 6pt 0 12pt 0; }
+
+/* Cleared-reminder card, shown prominently on every content page. */
+.reminder {
+  background: var(--warm-light);
+  border: 1.5pt solid var(--warm);
+  border-radius: 8pt;
+  padding: 7pt 10pt;
+  font-size: 9pt;
+  margin: 10pt 0 12pt 0;
+}
+.reminder strong { color: var(--warm); }
+
+.kind-note {
+  background: var(--green-light);
+  border-left: 3pt solid var(--green);
+  padding: 7pt 10pt;
+  font-size: 9.5pt;
+  margin: 8pt 0;
+  color: #2f4f3d;
+}
+
+/* Simple rowed layout for move cards. */
+.move {
+  border-bottom: 1pt solid var(--line);
+  padding: 6pt 0 7pt 0;
+}
+.move-title { font-weight: bold; font-size: 10.5pt; }
+.move-detail { color: var(--soft); font-size: 9pt; margin-top: 1pt; }
+.badge {
+  display: inline-block;
+  background: var(--warm-light);
+  color: var(--warm);
+  border-radius: 6pt;
+  padding: 1pt 6pt 2pt 6pt;
+  font-size: 8pt;
+  font-weight: bold;
+  vertical-align: 1pt;
+}
+
+.check {
+  display: inline-block;
+  width: 11pt;
+  height: 11pt;
+  border: 1.2pt solid var(--soft);
+  border-radius: 3pt;
+  vertical-align: -2pt;
+  margin-right: 6pt;
+}
+
+/* Tables */
+table.log {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 9pt;
+  margin-top: 6pt;
+}
+table.log th {
+  background: var(--warm-light);
+  color: var(--ink);
+  border: 0.8pt solid var(--line);
+  padding: 4pt 5pt;
+  text-align: left;
+  font-size: 8.5pt;
+}
+table.log td {
+  border: 0.8pt solid var(--line);
+  padding: 10pt 5pt;
+  vertical-align: top;
+}
+
+/* Sip tracker circles */
+.sip-row { margin: 7pt 0; }
+.sip-cup {
+  display: inline-block;
+  width: 18pt;
+  height: 18pt;
+  border: 1.2pt solid var(--soft);
+  border-radius: 4pt 4pt 9pt 9pt;
+  margin-right: 9pt;
+  vertical-align: middle;
+}
+
+/* Bingo grid */
+table.bingo { border-collapse: collapse; width: 100%; margin-top: 8pt; }
+table.bingo td {
+  border: 1pt solid var(--soft);
+  width: 20%;
+  height: 86pt;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 8.5pt;
+  padding: 6pt;
+  line-height: 1.3;
+}
+table.bingo td.free {
+  background: var(--warm-light);
+  font-weight: bold;
+  color: var(--warm);
+}
+
+.fill { border-bottom: 1pt solid var(--ink); display: inline-block; min-width: 120pt; }
+
+ul { margin: 4pt 0 8pt 16pt; padding: 0; }
+li { margin: 2pt 0; }
+.small { font-size: 8.5pt; color: var(--soft); }
+.toc-line { margin: 3pt 0; }
